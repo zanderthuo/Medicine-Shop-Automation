@@ -75,9 +75,9 @@ $user_info['date']=mysqli_fetch_assoc($r)['date'];
           </div>
             <ul class="navbar-nav mr-auto">
                 <li  class="nav-item active"><a class="nav-link"  href="#">Home</a></li>
-                <li  class="nav-item"><a class="nav-link"  href="stock.php">Stock</a></li>
+                <li  class="nav-item"><a class="nav-link"  href="Stock.php">Stock</a></li>
                 <li class="nav-item"><a class="nav-link"  href="customers.php">Customer</a></li>
-                <li class="nav-item"><a class="nav-link" href="Prescriptions.php">Prescriptions<span id="notif" class="badge"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="prescriptions.php">Prescriptions<span id="notif" class="badge"></span></a></li>
             <li class=" nav-item "><a class="nav-link"  href="order.php">Order</a></li>
              <li class=" nav-item "><a class="nav-link"  href="purchases.php">Purchases</a></li>
            

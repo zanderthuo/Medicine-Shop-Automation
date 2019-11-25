@@ -269,8 +269,8 @@ INSERT INTO `stock` (`shop_id`, `product_id`, `batch_no`, `quantity`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `user_id` varchar(40) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `user_id` varchar(40) NOT NULL AUTO_INCREMENT,
   `password` varchar(20) NOT NULL,
   `name` varchar(20) NOT NULL,
   `type` int(11) NOT NULL,

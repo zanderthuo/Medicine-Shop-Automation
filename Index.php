@@ -27,7 +27,7 @@ if(isset($_SESSION['email']))
   } ?> 
 <body>
 
-<div class="container bg-dark">
+<div class="container">
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
@@ -37,7 +37,7 @@ if(isset($_SESSION['email']))
 								<a href="#" class="active" id="login-form-link">Login</a>
 							</div>
 							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Register</a>
+								<a href="registration.php" id="register-form-link">Register</a>
 							</div>
 						</div>
 						<hr>
@@ -62,6 +62,7 @@ if(isset($_SESSION['email']))
 									</div>
 									
 								</form>
+								
 								<form  id="register-form" action="registration.php" method="post" role="form" style="display: none;" onsubmit="return validateForm()">
 									<div class="form-group">
 										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Name" value="" required>
@@ -226,10 +227,19 @@ function checkUsername()
 
 
 <style>
-    
+	
+	/* .container {
+		filter: blur(8px);
+  -webkit-filter: blur(8px);
+	} */
+
     body {
     padding-top: 90px;
-	background-color:#000000;
+	/* background-color:silver; */
+	background-image: url("images/cardiac.jpg");
+	background-repeat: no-repeat;
+	background-size: cover; 
+	
 }
 .panel-login {
 	border-color: #ccc;

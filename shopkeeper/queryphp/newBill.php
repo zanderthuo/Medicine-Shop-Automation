@@ -11,8 +11,8 @@ unset($_SESSION['bill_id']);
 $qry = "delete from bill where bill_id='$bill_id'";
 $r = mysqli_query($conn, $qry);
 
-$qry = "delete from bill_medicine where bill_id='$bill_id'";
-$r = mysqli_query($conn, $qry);
+// $qry = "delete from bill_medicine where bill_id='$bill_id'";
+// $r = mysqli_query($conn, $qry);
 
 header("Location:../index.php");
 
