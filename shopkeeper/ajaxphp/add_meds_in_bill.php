@@ -1,8 +1,14 @@
 <?php
 require('../../connect.php');
 session_start();
-$product_id = $_POST['product_id'];
-$batch_no=$_POST['batch_no'];
+
+if(isset($_POST['product_id']) && isset($_POST['batch_no'])){
+  $product_id = $_POST['product_id']; //Line 10
+  $batch_no=$_POST['batch_no']; //Line 1
+}
+
+// $product_id = $_POST['product_id'];
+// $batch_no=$_POST['batch_no'];
 
 $qty=$_POST['qty'];
 

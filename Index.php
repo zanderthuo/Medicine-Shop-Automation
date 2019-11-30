@@ -240,6 +240,7 @@ function checkUsername()
 	background-repeat: no-repeat;
 	background-size: cover; 
 	
+	
 }
 .panel-login {
 	border-color: #ccc;

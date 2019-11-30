@@ -20,10 +20,11 @@ $email=$_SESSION["email"];
     </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
            <div class="navbar-header">
-            <a class="navbar-brand" href="#"><b>MSA</b></a>
+            <a class="navbar-brand" href="index.php"><b>MSA</b></a>
           </div>
     				<ul class="navbar-nav mr-auto">
-      					<li class=" nav-item active" ><a class="nav-link" href="#">Purchases</a></li>
+      					<!-- <li class=" nav-item active" ><a class="nav-link" href="#">Purchases</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="presDetails.php">Prescription</a></li>
       					<li class="nav-item"><a class="nav-link" href="doctors.php">Doctors</a></li>
       					<li class="nav-item"><a class="nav-link" href="credits.php">Credits</a></li>
       		

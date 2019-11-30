@@ -75,15 +75,15 @@ $user_info['date']=mysqli_fetch_assoc($r)['date'];
           </div>
             <ul class="navbar-nav mr-auto">
                 <li  class="nav-item active"><a class="nav-link"  href="#">Home</a></li>
-                <li  class="nav-item"><a class="nav-link"  href="Stock.php">Stock</a></li>
+                <li  class="nav-item"><a class="nav-link"  href="stock.php">Stock</a></li>
                 <li class="nav-item"><a class="nav-link"  href="customers.php">Customer</a></li>
-                <li class="nav-item"><a class="nav-link" href="prescriptions.php">Prescriptions<span id="notif" class="badge"></span></a></li>
+                <li class="nav-item"><a class="nav-link" href="Prescriptions.php">Prescriptions<span id="notif" class="badge"></span></a></li>
             <li class=" nav-item "><a class="nav-link"  href="order.php">Order</a></li>
              <li class=" nav-item "><a class="nav-link"  href="purchases.php">Purchases</a></li>
            
             </ul>
 
-            <a href="queryPhp/newBill.php"><button  type="button" class="btn btn-primary navbar-btn pull-right"  >New Bill</button> </a>
+            <a href="queryphp/newBill.php"><button  type="button" class="btn btn-primary navbar-btn pull-right"  >New Bill</button> </a>
 
           
             <button  type="button" class="btn btn-danger navbar-btn pull-right" data-toggle="modal" data-target="#myModal">Logout</button> 
@@ -137,7 +137,7 @@ $user_info['date']=mysqli_fetch_assoc($r)['date'];
 
   
 
-<form class="form-inline" style="padding: 5px" onsubmit=" return addMeds()" id="new_med">
+<form method="POST" class="form-inline" style="padding: 5px" onsubmit=" return addMeds()" id="new_med">
 
         <div class="form-group">
   <input type="text" style="margin: 10px"   id="meds_name" tabindex="1" class="form-control input-sm" placeholder="Enter medicine name" autocomplete="off">
@@ -223,13 +223,22 @@ $('#name').change(function() {
 
  });
 
- /*$('#add').click(function() {
-
+ $('#add').click(function() {
+  $.ajax({
+    url:"ajaxphp/add_meds_in_bill.php",
+    method:"POST",
+    data: {
+      'meds_name' :this.meds_name,
+      'qty' : this.qty,
+      'product_id' : this.product_id,
+      'batch_no' : this.batch_no
+    }
+  });
     
 
 
 });
-*/
+
  $("#table_div").on('click','.remove',function(){
     $.ajax({
     url:"ajaxphp/remove_meds_in_bill.php",
