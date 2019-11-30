@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 20, 2019 at 07:09 AM
+-- Generation Time: Nov 30, 2019 at 11:10 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.1.31
 
@@ -159,7 +159,15 @@ INSERT INTO `ordered_medicine` (`id`, `order_id`, `product_id`, `qty`) VALUES
 (1, 1, 1, 100),
 (2, 1, 1, 30),
 (3, 2, 1, 100),
-(4, 2, 2, 10);
+(4, 2, 2, 10),
+(5, 3, 3, 20),
+(6, 4, 7, 2),
+(7, 5, 7, 2),
+(8, 6, 7, 2),
+(9, 7, 7, 1),
+(10, 8, 7, 2),
+(11, 9, 7, 2),
+(12, 10, 9, 10);
 
 -- --------------------------------------------------------
 
@@ -183,7 +191,15 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`order_id`, `shop_id`, `supplier_id`, `seen`, `processed`, `confirmed`, `date`) VALUES
 (1, 'koshal_sk@gmail.com', 'koshal_s@gmail.com', 1, 1, 1, '2018-04-12'),
-(2, 'koshal_sk@gmail.com', 'koshal_s@gmail.com', 1, 1, 1, '2018-04-12');
+(2, 'koshal_sk@gmail.com', 'koshal_s@gmail.com', 1, 1, 1, '2018-04-12'),
+(3, 'koshal_sk@gmail.com', '', 0, 0, 0, '2019-11-25'),
+(4, 'dibya_sk@gmail.com', '', 0, 0, 0, '2019-11-25'),
+(5, 'dibya_sk@gmail.com', '', 0, 0, 0, '2019-11-25'),
+(6, 'dibya_sk@gmail.com', '', 0, 0, 0, '2019-11-25'),
+(7, 'dibya_sk@gmail.com', 'test2@test.com', 1, 1, 1, '2019-11-25'),
+(8, 'test11@test.com', 'test2@test.com', 1, 1, 0, '2019-11-25'),
+(9, 'test11@test.com', 'test2@test.com', 1, 0, 0, '2019-11-25'),
+(10, 'test3@gmail.com', 'joy@gmail.com', 1, 1, 1, '2019-11-30');
 
 -- --------------------------------------------------------
 
@@ -262,7 +278,8 @@ INSERT INTO `stock` (`shop_id`, `product_id`, `batch_no`, `quantity`) VALUES
 ('koshal_sk@gmail.com', 7, 1, 998),
 ('koshal_sk@gmail.com', 8, 1, 1000),
 ('koshal_sk@gmail.com', 1, 6, 930),
-('koshal_sk@gmail.com', 2, 1, 80);
+('koshal_sk@gmail.com', 2, 1, 80),
+('dibya_sk@gmail.com', 7, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -286,14 +303,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_id`, `password`, `name`, `type`, `address`, `contact_no`, `date`) VALUES
-(1, 'koshal_sk@gmail.com', '123456', 'Koshal Garg', 1, 'Rourkela', '8339895678', '2018/04/05'),
-(2, 'dibya_sk@gmail.com', '123456', 'Dibya Ranjan Mishra', 1, 'Rourkela', '9777511898', '2018/04/05'),
-(3, 'patient1@gmail.com', '123456', 'Patient One', 2, 'bbsr', '955612100', '2017-12-22'),
-(4, 'patient2@gmail.com', '123456', 'Patient Two', 2, 'bbsr', '8795612100', '2017-08-16'),
+(1, 'alex@gmail.com', '123456', 'Alex Alex', 1, 'Rourkela', '8339895678', '2018/04/05'),
+(2, 'zanderzander@gmail.com', '123456', 'zander zander', 1, 'Rourkela', '9777511898', '2018/04/05'),
+(3, 'peter@gmail.com', '123456', 'Peter', 2, 'bbsr', '955612100', '2017-12-22'),
+(4, 'alex@gmail.com', '123456', 'Alex', 2, 'bbsr', '8795612100', '2017-08-16'),
 (5, 'doctor1@gmail.com', '123456', 'doctor_one', 3, 'rourkela', '906832521', '2017-10-23'),
 (6, 'doctor2@gmail.com', '123456', 'doctor_two', 3, 'rourkela', '906212521', '2017-12-04'),
-(7, 'koshal_s@gmail.com', '123456', 'Koshal Kumar Garg', 4, 'Rourkela', '8339895678', '2018/04/08'),
-(8, 'koshal.kkg1996@gmail.com', '123456', 'KAILASH KUMAR GARG', 1, 'JHARBANDH, COLLEGE R', '8339895678', '2018/04/12'),
+(7, 'test2@test.com', '123456', 'zander zander', 4, 'Rourkela', '8339895678', '2018/04/08'),
+(8, 'zander@gmail.com', '123456', 'zander', 1, 'JHARBANDH, COLLEGE R', '8339895678', '2018/04/12'),
 (9, 'test@test.com', '12345', 'Lex', 1, 'buru', '+254719808225', '2019/10/02'),
 (10, '', '', '', 0, '', '', '2019/10/02'),
 (11, '', '', '', 0, '', '', '2019/10/02'),
@@ -304,7 +321,14 @@ INSERT INTO `users` (`id`, `user_id`, `password`, `name`, `type`, `address`, `co
 (16, 'test@test.com', '123456789', 'John Doe', 3, 'buruburu', '789789567', '2019/11/02'),
 (17, 'lex@test.com', '123456', 'Ale', 1, 'kericho', '123456789', '2019/11/02'),
 (18, 'j@test.com', '123456', 'Johnny', 2, 'ruiru', '00000000', '2019/11/02'),
-(19, 'jake@test.com', '123456', 'Jake', 1, 'kiserian', '00000000', '2019/11/03');
+(19, 'jake@test.com', '123456', 'Jake', 1, 'kiserian', '00000000', '2019/11/03'),
+(20, 'test11@test.com', '123456abc', 'zandzander', 1, 'Nairobi', '0710000000', '2019/11/25'),
+(21, 'steve@gmail.com', '123456', 'Steve', 2, 'buru', '0790000000', '2019/11/29'),
+(22, 'mwojeffren100@gmail.com', '123456', 'jeff', 2, '23340-00100', '070400000', '2019/11/29'),
+(23, 'test3@gmail.com', '123456', 'Moses', 1, 'juja', '0700000000', '2019/11/30'),
+(24, 'joy@gmail.com', '123456', 'Joy', 4, 'juja', '07001234556', '2019/11/30'),
+(25, 'maggy@gmail.com', '123456', 'Maggy', 3, 'juja', '0701010101', '2019/11/30'),
+(26, 'martin@gmail.com', '123456', 'Martin', 2, 'juja', '0800000000', '2019/11/30');
 
 --
 -- Indexes for dumped tables
@@ -390,13 +414,13 @@ ALTER TABLE `medicine`
 -- AUTO_INCREMENT for table `ordered_medicine`
 --
 ALTER TABLE `ordered_medicine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `prescriptions`
@@ -414,7 +438,7 @@ ALTER TABLE `pres_meds`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

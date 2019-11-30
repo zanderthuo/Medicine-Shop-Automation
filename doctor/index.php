@@ -252,7 +252,28 @@ $(document).ready(function(){
   }
 
  });
+//////////////////////////////////////////////////////////////
+ $('#add').typeahead({
 
+source: function(query, result)
+{
+ $.ajax({
+  url:"ajaxphp/add_meds_in_pres.php",
+  method:"POST",
+  data:{query:query},
+  dataType:"json",
+  success:function(data)
+  {
+
+   result($.map(data, function(item){
+    return item;
+   }));
+  }
+ })
+}
+
+});
+/////////////////////////////////////////////////////////////
   $('#shop_id').change(function() {
 
     var current = $('#shop_id').typeahead("getActive");
